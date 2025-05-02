@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradeverse Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Tradeverse</div>
+        <div class="menu-icon">&#9776;</div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h1 class="login-title">➡ Login</h1>
+            <form action="login.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Email or Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your email or username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span class="password-toggle">👁</span>
+                </div>
+                <button type="submit" class="login-button">LOGIN</button>
+            </form>
+            <a href="#" class="forgot-password">Forgot Password?</a>
+            <p class="register-link">Don't have an account? <a href="register.html">Register</a></p> <!-- Correct link to register.html -->
+        </div>
+    </main>
+
+    <footer>
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item"><img src="home-icon.png" alt="Home"> Home</a>
+            <a href="#" class="nav-item"><img src="login-icon.png" alt="Login"> Login</a>
+            <a href="register.html" class="nav-item"><img src="register-icon.png" alt="Register"> Register</a> <!-- Correct link to register.html -->
+        </nav>
+    </footer>
+
+    <script src="style.js"></script>
+</body>
+</html>

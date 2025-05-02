@@ -1,0 +1,7 @@
+Coin: Cardano | Amount: 1200 | Phone: 0792721804 | Code: 
+Coin: Cardano | Amount: 1200 | Phone: 0792721804 | Code: 
+Coin: Cardano | Amount: 1200 | Phone: 0792721804 | Code: 
+Coin: XRP | Amount: 2000 | Phone: 0792721804 | Code: 
+Coin: XRP | Expected: 2000 | Sent: 500 | Phone: 0792721804
+Coin: Polkadot | Expected: 4500 | Sent: 4500 | Phone: 0792721804
+Coin: Polkadot | Expected: 4500 | Sent: 4500 | Phone: 0792721804
