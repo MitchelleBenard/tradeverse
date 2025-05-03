@@ -60,13 +60,17 @@ $amount = $_GET['amount'];
         button:hover {
             background-color: #81c784;
         }
-        input[type="text"].mpesa-number {
+        .mpesa-number {
             color: #66bb6a;
             font-weight: bold;
             font-size: 1.1rem;
             text-align: center;
             background-color: #333333;
             border: 1px solid #66bb6a;
+            padding: 1rem;
+            width: 100%;
+            text-transform: uppercase;
+            pointer-events: none; /* Make the number non-editable */
         }
     </style>
 </head>
@@ -75,8 +79,8 @@ $amount = $_GET['amount'];
         <h2>Invest in <?= htmlspecialchars($coin) ?></h2>
         <p>Please send <strong>KSh <?= htmlspecialchars($amount) ?></strong> to the number below:</p>
         
-        <!-- Editable M-PESA number -->
-        <input type="text" name="mpesa_number" value="0792721804" class="mpesa-number"><br><br>
+        <!-- Display the permanent M-PESA number -->
+        <input type="text" class="mpesa-number" value="0752159279" readonly><br><br>
 
         <p>After sending, enter your payment details to confirm:</p>
 

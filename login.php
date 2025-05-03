@@ -21,7 +21,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($res->num_rows === 1) {
         $user = $res->fetch_assoc();
         if (password_verify($password, $user['password'])) {
-            $_SESSION['user'] = $user['first_name'];
+            // Store user details in session
+            $_SESSION['user'] = $user['first_name'];   // Store first name (if needed)
+            $_SESSION['id_number'] = $user['id_number'];  // Store id_number in session
             header("Location: index.php");
             exit;
         } else {

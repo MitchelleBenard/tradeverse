@@ -261,43 +261,17 @@
               "drawWick": true,
               "wickUpColor": "#9db2bd",
               "wickDownColor": "#9db2bd",
-              "drawBorder": false
+              "barColorsOnPrevClose": false
             },
-            "areaStyle": {
-              "color": "#664caf",
-              "linecolor": "#9db2bd",
-              "linewidth": 1
+            "studies": [
+              "RSI",
+              "MACD"
+            ]
             }
-          }
             </script>
         </div>
+
     </main>
 
-    <nav id="bottom-nav" class="bottom-nav">
-        <a href="/database/home" class="nav-item">Home</a>
-        <a href="/database/invest" class="nav-item">Invest</a>
-        <a href="/database/deposit" class="nav-item">Deposit</a>
-        <a href="/database/withdraw" class="nav-item">Withdraw</a>
-        <a href="/database/account" class="nav-item">Account</a>
-    </nav>
-
-    <script>
-        const menuButton = document.getElementById('menu-button');
-        const bottomNav = document.getElementById('bottom-nav');
-
-        menuButton.addEventListener('click', () => {
-            bottomNav.classList.toggle('show');
-        });
-
-        // Close nav when a link is clicked (optional)
-        const navLinks = document.querySelectorAll('.bottom-nav a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) { // Only close if it's the small screen menu
-                    bottomNav.classList.remove('show');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

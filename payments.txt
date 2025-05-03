@@ -5,3 +5,9 @@ Coin: XRP | Amount: 2000 | Phone: 0792721804 | Code:
 Coin: XRP | Expected: 2000 | Sent: 500 | Phone: 0792721804
 Coin: Polkadot | Expected: 4500 | Sent: 4500 | Phone: 0792721804
 Coin: Polkadot | Expected: 4500 | Sent: 4500 | Phone: 0792721804
+Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
+Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
+Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
+Coin: Avalanche | Expected: 7500 | Sent: -5 | Phone: 0792721804
+Coin: Avalanche | Expected: 7500 | Sent: 7500 | Phone: 7500
+Coin: Dogecoin | Expected: 22500 | Sent: 22500 | Phone: 22500

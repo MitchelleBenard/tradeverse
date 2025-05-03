@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
-    // Check if the email already exists
+    // Check if email already exists
     $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $check->bind_param("s", $email);
     $check->execute();
@@ -60,13 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
         }
 
-        .success {
-            background-color: #ffe6e6;
-            color: red;
-            border: 1px solid red;
-        }
-
-        .error {
+        .success, .error {
             background-color: #ffe6e6;
             color: red;
             border: 1px solid red;

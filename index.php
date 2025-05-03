@@ -23,13 +23,16 @@
         </div>
     </main>
     
-    <!-- ✅ Updated Navigation -->
+    <!-- ✅ Updated Navigation with Admin Section -->
     <nav class="bottom-nav">
         <a href="/frontend/home.php" class="nav-item">Home</a>
         <a href="/frontend/invest.php" class="nav-item">Invest</a>
         <a href="/frontend/deposit.php" class="nav-item">Deposit</a>
         <a href="/frontend/withdraw.php" class="nav-item">Withdraw</a>
         <a href="/frontend/account.php" class="nav-item">Account</a>
+        
+        <!-- Admin Section - Link to Admin Login Page -->
+        <a href="/frontend/admin_login.php" class="nav-item">Admin Login</a>
     </nav>
 
     <!-- ✅ TradingView Widget -->
