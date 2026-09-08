@@ -1,17 +1,8 @@
 <?php
 session_start();
+require_once "db_config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $db = "user_system";
-
-    $conn = new mysqli($host, $user, $pass, $db);
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -21,17 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        // Successful login
+    if ($result && $result->num_rows > 0) {
         $_SESSION['admin_email'] = $email;
         header("Location: admin_dashboard.php");
         exit();
     } else {
-        // Incorrect login details
         $error_message = "Invalid login credentials.";
     }
-
-    $conn->close();
 }
 ?>
 
@@ -58,10 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                     <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
+
                 <div class="mb-6">
                     <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
                     <input type="password" id="password" name="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                 </div>
+
                 <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Login</button>
             </form>
         </div>

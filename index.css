@@ -1,75 +1,305 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0f172a;
-    color: #ffffff;
-    text-align: center;
+/* =========================================================
+   TRADEVERSE — MODERN INVESTMENT DASHBOARD
+   ========================================================= */
+
+:root {
+    --bg: #07111f;
+    --surface: #0d1b2a;
+    --surface-light: #13263a;
+    --border: rgba(255,255,255,0.08);
+    --text: #f8fafc;
+    --muted: #94a3b8;
+    --primary: #22c55e;
+    --primary-dark: #16a34a;
+    --danger: #ef4444;
+    --warning: #f59e0b;
+    --radius: 16px;
 }
 
-/* Header */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background:
+        radial-gradient(circle at top right, rgba(34,197,94,0.10), transparent 30%),
+        var(--bg);
+    color: var(--text);
+    text-align: left;
+}
+
+/* ================= HEADER ================= */
+
 header {
+    height: 72px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-    background-color: #1e293b;
+    justify-content: space-between;
+    padding: 0 32px;
+    background: rgba(7,17,31,0.92);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(16px);
 }
 
 header h1 {
-    font-size: 1.5rem;
     margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .menu-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 20px;
     cursor: pointer;
-    position: left;
+    transition: 0.2s ease;
 }
 
-/* Account Box */
+.menu-button:hover {
+    background: var(--surface-light);
+    transform: translateY(-1px);
+}
+
+/* ================= MAIN ================= */
+
+main {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 36px 0 120px;
+}
+
+/* ================= ACCOUNT / HERO ================= */
+
 .account-box {
-    background-color: #1e293b;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 30px;
+    border-radius: var(--radius);
+    background:
+        linear-gradient(135deg, rgba(34,197,94,0.12), rgba(13,27,42,0.95));
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
 }
 
 .account-box h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+    margin: 0 0 8px;
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .account-box p {
-    font-size: 1rem;
-    line-height: 1.5;
+    max-width: 650px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-/* Bottom Navigation */
-.bottom-nav {
+/* ================= DASHBOARD CARDS ================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.dashboard-card {
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(34,197,94,0.25);
+}
+
+.dashboard-card .label {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.dashboard-card .value {
+    font-size: 28px;
+    font-weight: 750;
+}
+
+.dashboard-card .change {
+    margin-top: 8px;
+    color: var(--primary);
+    font-size: 13px;
+}
+
+/* ================= ACTIONS ================= */
+
+.action-section {
+    margin-top: 28px;
+}
+
+.action-section h3 {
+    margin-bottom: 14px;
+    font-size: 18px;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.action-button {
     display: flex;
-    justify-content: space-around;
-    position:bottom;
-    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    background: var(--surface-light);
+    border: 1px solid var(--border);
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 650;
+    transition: 0.2s ease;
+}
+
+.action-button:hover {
+    background: var(--primary);
+    color: #04120a;
+    transform: translateY(-2px);
+}
+
+.action-button.primary {
+    background: var(--primary);
+    color: #04120a;
+}
+
+.action-button.primary:hover {
+    background: var(--primary-dark);
+    color: white;
+}
+
+/* ================= TRADINGVIEW ================= */
+
+.tradingview-widget-container {
+    margin-top: 28px;
     width: 100%;
-    background-color: #1e293b;
-    padding: 10px 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+/* ================= BOTTOM NAVIGATION ================= */
+
+.bottom-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    z-index: 200;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    width: min(760px, calc(100% - 24px));
+    padding: 8px;
+
+    background: rgba(13,27,42,0.94);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+    backdrop-filter: blur(18px);
 }
 
 .nav-item {
+    flex: 1;
+    text-align: center;
     text-decoration: none;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 12px 10px;
+    border-radius: 12px;
+    transition: 0.2s ease;
 }
 
 .nav-item:hover {
-    background-color: #334155;
+    color: var(--text);
+    background: var(--surface-light);
+}
+
+.nav-item.active {
+    color: var(--primary);
+    background: rgba(34,197,94,0.10);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+    header {
+        padding: 0 18px;
+    }
+
+    main {
+        width: min(100% - 24px, 680px);
+        padding-top: 24px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav {
+        bottom: 10px;
+        border-radius: 15px;
+    }
+
+    .nav-item {
+        font-size: 11px;
+        padding: 10px 4px;
+    }
+
+    .account-box {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 64px;
+    }
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    .account-box h2 {
+        font-size: 26px;
+    }
+
+    .dashboard-card .value {
+        font-size: 24px;
+    }
 }

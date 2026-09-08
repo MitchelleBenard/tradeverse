@@ -1,14 +1,16 @@
 <?php
-$servername = "localhost"; // Host name
-$username = "root"; // Database username (default in XAMPP is root)
-$password = ""; // Database password (default in XAMPP is an empty string)
-$dbname = "user_system"; // Your database name
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$servername = getenv('DB_HOST') ?: 'localhost';
+$username   = getenv('DB_USER') ?: 'tradeverse';
+$password   = getenv('DB_PASSWORD') ?: '';
+$dbname     = getenv('DB_NAME') ?: 'user_system';
+$port       = getenv('DB_PORT') ?: 3306;
 
-// Check connection
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
+
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Database connection failed.");
 }
+
+$conn->set_charset("utf8mb4");
 ?>

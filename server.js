@@ -4,15 +4,17 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
 // DB connection
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '', // your XAMPP password, leave empty if none
-  database: 'usersdb'
+  host: process.env.DB_HOST || 'localhost',
+  user: process.env.DB_USER || 'tradeverse',
+  password: process.env.DB_PASSWORD || '',
+  database: process.env.DB_NAME || 'user_system',
+  port: process.env.DB_PORT || 3306
 });
 
 db.connect(err => {

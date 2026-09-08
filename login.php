@@ -1,11 +1,6 @@
 <?php
 session_start();
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "user_system";
-
-$conn = new mysqli($host, $user, $pass, $db);
+require_once "db_config.php";
 
 $message = "";
 

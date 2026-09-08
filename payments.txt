@@ -11,3 +11,7 @@ Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
 Coin: Avalanche | Expected: 7500 | Sent: -5 | Phone: 0792721804
 Coin: Avalanche | Expected: 7500 | Sent: 7500 | Phone: 7500
 Coin: Dogecoin | Expected: 22500 | Sent: 22500 | Phone: 22500
+Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
+Coin: Solana | Expected: 500 | Sent: 500 | Phone: 0792721804
+Coin: Cardano | Expected: 1200 | Sent: 5000 | Phone: 0792721804
+Coin: Cardano | Expected: 1200 | Sent: 200 | Phone: 0792721804

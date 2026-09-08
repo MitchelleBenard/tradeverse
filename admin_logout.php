@@ -7,6 +7,6 @@ session_unset();
 session_destroy();
 
 // Redirect to the index page
-header("Location: /frontend/index.php");
+header("Location: /index.php");
 exit();
 ?>
